@@ -29,6 +29,14 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+OUR_APPS = [
+    "app",
+]
+
+THIRD_PARTY_APPS = [
+    "crispy_forms",
+    'crispy_bootstrap4',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+] + OUR_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,6 +58,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ajax_project.urls'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 TEMPLATES = [
     {
