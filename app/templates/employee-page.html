@@ -67,7 +67,7 @@
         console.log("getting data from server....")
         $.ajax({
             method: "GET",
-            url: "/employees"
+            url: "/employees/"
         })
             .done(
                 function (response) {
@@ -137,7 +137,7 @@
                             'X-CSRFToken': csrftoken
                         },
                         method: "PUT",
-                        url: "/employee",
+                        url: "/employee/",
                         data: JSON.stringify(body)
                     })
                         .done(function (response) {
@@ -194,7 +194,7 @@
 
         $.ajax({
             method: "POST",
-            url: "/employee",
+            url: "/employee/",
             data: body
         })
             .done(function (response) {

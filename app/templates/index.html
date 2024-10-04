@@ -11,7 +11,7 @@
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Office and Employee Management</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,25 +22,50 @@
 </head>
 
 <body>
-
     <div class="container-fluid h-100">
         <br>
         <div class="row h-100">
+            <!-- Sidebar -->
             <div class="col-2 h-100 border">
                 <br>
                 <br>
                 <div class="list-group">
-
-                    <a href="/pages/office" target="content" class="list-group-item">Office</a>
-                    <a href="/pages/employee" target="content" class="list-group-item">Employees</a>
+                    <a href="/pages/office/" target="content" class="list-group-item">Office</a>
+                    <a href="/pages/employee/" target="content" class="list-group-item">Employees</a>
                 </div>
             </div>
-            <div class="col-10 h-100">
-                <iframe name="content" frameborder="0" class="h-100 w-100" src="/pages/office"></iframe>
+
+            <!-- Main Content Area -->
+            <div class="col-10">
+                <div class="row">
+                    <div class="flex">
+                        <h1> Office Data</h1>
+                    </div>
+                    
+                    <div class="col-7">
+                        <table class="table table-bordered" id="officeTable">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Sno</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody id="officeTableId">
+                                {% for office in offices %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ office.name }}</td>
+                                    <td>{{ office.location }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

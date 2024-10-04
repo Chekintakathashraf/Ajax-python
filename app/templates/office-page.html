@@ -61,7 +61,7 @@
         console.log("getting data from server....")
         $.ajax({
             method: "GET",
-            url: "/offices"
+            url: "/offices/"
         })
             .done(
                 function (response) {
@@ -118,7 +118,7 @@
 
         $.ajax({
             method: "POST",
-            url: "/office",
+            url: "/office/",
             data: body
         })
             .done(function (response) {
